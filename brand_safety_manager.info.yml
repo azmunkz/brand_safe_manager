@@ -1,0 +1,7 @@
+name: 'Brand Safety Manager'
+type: module
+description: 'Manages brand safety keywords and scans content.'
+core_version_requirement: ^10 || ^11
+package: Custom
+dependencies:
+  - key

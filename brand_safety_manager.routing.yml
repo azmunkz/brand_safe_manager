@@ -1,0 +1,15 @@
+brand_safety_manager.keyword_admin_form:
+  path: '/admin/config/brand-safety/keywords'
+  defaults:
+    _form: '\Drupal\brand_safety_manager\Form\KeywordAdminForm'
+    _title: 'Manage Brand Safety Keywords'
+  requirements:
+    _permission: 'administer brand safety keywords'
+
+brand_safety_manager.dev_create_table:
+  path: '/admin/config/brand-safety/dev-create-table'
+  defaults:
+    _controller: '\Drupal\brand_safety_manager\Controller\SchemaDevController::createTable'
+    _title: 'Create Brand Safety Table (Dev Only)'
+  requirements:
+    _permission: 'administer brand safety keywords'
