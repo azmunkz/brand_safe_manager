@@ -1,0 +1,13 @@
+datatables:
+  version: 1.x
+  css:
+    theme:
+      css/datatables.css: {}
+      https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css: { type: external }
+  js:
+    https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js: { type: external, minified: true }
+    js/datatables-init.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

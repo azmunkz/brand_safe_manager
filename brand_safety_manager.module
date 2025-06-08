@@ -4,3 +4,14 @@
  * @file
  * Required module file.
  */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function brand_safety_manager_form_keyword_admin_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (isset($form['csv_upload'])) {
+    // Override allowed extensions manually.
+    $form['csv_upload']['#upload_validators'] = [];
+    $form['csv_upload']['#upload_validators']['file_validate_extensions'] = ['csv'];
+  }
+}

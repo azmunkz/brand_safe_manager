@@ -1,8 +1,32 @@
-brand_safety_manager.keyword_admin_form:
+brand_safety_manager.keyword_list:
   path: '/admin/config/brand-safety/keywords'
   defaults:
-    _form: '\Drupal\brand_safety_manager\Form\KeywordAdminForm'
-    _title: 'Manage Brand Safety Keywords'
+    _form: '\Drupal\brand_safety_manager\Form\KeywordListForm'
+    _title: 'Keyword List'
+  requirements:
+    _permission: 'administer brand safety keywords'
+
+brand_safety_manager.keyword_add:
+  path: '/admin/config/brand-safety/keywords/add'
+  defaults:
+    _form: '\Drupal\brand_safety_manager\Form\KeywordAddForm'
+    _title: 'Add Single Keyword'
+  requirements:
+    _permission: 'administer brand safety keywords'
+
+brand_safety_manager.keyword_bulk:
+  path: '/admin/config/brand-safety/keywords/bulk'
+  defaults:
+    _form: '\Drupal\brand_safety_manager\Form\KeywordBulkForm'
+    _title: 'Add Multiple Keywords'
+  requirements:
+    _permission: 'administer brand safety keywords'
+
+brand_safety_manager.keyword_upload:
+  path: '/admin/config/brand-safety/keywords/upload'
+  defaults:
+    _form: '\Drupal\brand_safety_manager\Form\KeywordUploadForm'
+    _title: 'Upload Keywords via CSV'
   requirements:
     _permission: 'administer brand safety keywords'
 
@@ -13,3 +37,19 @@ brand_safety_manager.dev_create_table:
     _title: 'Create Brand Safety Table (Dev Only)'
   requirements:
     _permission: 'administer brand safety keywords'
+
+brand_safety_manager.keyword_delete:
+  path: '/admin/config/brand-safety/keywords/delete/{id}'
+  defaults:
+    _form: '\Drupal\brand_safety_manager\Form\KeywordDeleteForm'
+    _title: 'Delete Keyword'
+  requirements:
+    _permission: 'administer brand safety keywords'
+
+brand_safety_manager.keyword_edit:
+  path: '/admin/config/brand-safety/keywords/edit/{id}'
+  defaults:
+    _form: '\Drupal\brand_safety_manager\Form\KeywordEditForm'
+    _title: 'Edit Keyword'
+  requirements:
+    _permission: 'administer site configuration'
