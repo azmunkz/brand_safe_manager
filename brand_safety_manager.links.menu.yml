@@ -1,0 +1,39 @@
+# Parent menu group - Brand Safety section
+brand_safety_manager.settings_group:
+  title: 'Brand Safety Manager'
+  description: 'Manage brand safety keywords and validation'
+  route_name: brand_safety_manager.keyword_list
+  parent: system.admin_config
+  weight: 20
+
+# Menu item - Keyword Listing
+brand_safety_manager.keyword_list_menu:
+  title: 'Keyword List'
+  description: 'View and manage all keywords'
+  route_name: brand_safety_manager.keyword_list
+  parent: brand_safety_manager.settings_group
+  weight: 1
+
+# Menu item - Add Single Keyword
+brand_safety_manager.keyword_add_menu:
+  title: 'Add Single Keyword'
+  description: 'Manually add a new keyword'
+  route_name: brand_safety_manager.keyword_add
+  parent: brand_safety_manager.settings_group
+  weight: 2
+
+# Menu item - Add Bulk Keywords
+brand_safety_manager.keyword_bulk_menu:
+  title: 'Add Multiple Keywords'
+  description: 'Add keywords using bulk textarea'
+  route_name: brand_safety_manager.keyword_bulk
+  parent: brand_safety_manager.settings_group
+  weight: 3
+
+# Menu item - Upload CSV
+brand_safety_manager.keyword_upload_menu:
+  title: 'Upload CSV'
+  description: 'Upload keyword list from CSV file'
+  route_name: brand_safety_manager.keyword_upload
+  parent: brand_safety_manager.settings_group
+  weight: 4
