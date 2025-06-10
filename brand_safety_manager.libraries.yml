@@ -11,3 +11,17 @@ datatables:
     - core/jquery
     - core/drupal
     - core/once
+
+ai_scan:
+  version: 1.x
+  css:
+    theme:
+      css/ai_scan.css: {}
+  js:
+    js/ai_scan.js: {}
+    https://cdn.jsdelivr.net/npm/sweetalert2@11: {type: external, minified: true}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+    - sweetalert2/sweetalert2

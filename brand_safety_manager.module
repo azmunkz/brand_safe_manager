@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * @file
  * Required module file.
@@ -8,10 +10,63 @@
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function brand_safety_manager_form_keyword_admin_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function brand_safety_manager_form_keyword_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (isset($form['csv_upload'])) {
     // Override allowed extensions manually.
     $form['csv_upload']['#upload_validators'] = [];
     $form['csv_upload']['#upload_validators']['file_validate_extensions'] = ['csv'];
   }
+}
+
+
+/**
+ * Implemente hook_form_FORM_ID_alter() for Article node form.
+ */
+function brand_safety_manager_form_node_article_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Add button after title field
+  $form['brand_safety_buttons_wrapper'] = [
+    '#type' => 'container',
+    '#attributes' => [
+      'class' => ['brand-safety-button-wrapper'],
+      'style' => 'display: flex; gap: 10px; align-items: flex-start; margin-top: 10px;',
+    ],
+    '#weight' => $form['title']['#weight'] + 0.1,
+  ];
+
+  $form['brand_safety_buttons_wrapper']['ai_scan_button'] = [
+    '#type' => 'button',
+    '#value' => t('Validate for Brand Safety'),
+    '#attributes' => [
+      'class' => ['button'],
+      'id' => ['ai-scan-button'],
+    ],
+  ];
+
+  // Attach JS library
+  $form['#attached']['library'][] = 'brand_safety_manager/ai_scan';
+}
+
+function brand_safety_manager_form_node_article_edit_form_alter(&$form, FormStateInterface $formState, $form_id)
+{
+  // Add button after title field
+  $form['brand_safety_buttons_wrapper'] = [
+    '#type' => 'container',
+    '#attributes' => [
+      'class' => ['brand-safety-button-wrapper'],
+      'style' => 'display: flex; gap: 10px; align-items: flex-start; margin-top: 10px;',
+    ],
+    '#weight' => $form['title']['#weight'] + 0.1,
+  ];
+
+  $form['brand_safety_buttons_wrapper']['ai_scan_button'] = [
+    '#type' => 'button',
+    '#value' => t('Validate for Brand Safety'),
+    '#attributes' => [
+      'class' => ['button', 'button--primary'],
+      'id' => ['ai-scan-button'],
+    ],
+  ];
+
+  // Attach JS library
+  $form['#attached']['library'][] = 'brand_safety_manager/ai_scan';
 }

@@ -6,13 +6,21 @@ brand_safety_manager.settings_group:
   parent: system.admin_config
   weight: 20
 
+# Menu item - Brand Safety Settings
+brand_safety_manager.settings_menu:
+  title: 'Brand Safety Settings'
+  description: 'Configure OpenAI prompt and content scan settings'
+  route_name: brand_safety_manager.settings
+  parent: brand_safety_manager.settings_group
+  weight: 1
+
 # Menu item - Keyword Listing
 brand_safety_manager.keyword_list_menu:
   title: 'Keyword List'
   description: 'View and manage all keywords'
   route_name: brand_safety_manager.keyword_list
   parent: brand_safety_manager.settings_group
-  weight: 1
+  weight: 2
 
 # Menu item - Add Single Keyword
 brand_safety_manager.keyword_add_menu:
@@ -20,7 +28,7 @@ brand_safety_manager.keyword_add_menu:
   description: 'Manually add a new keyword'
   route_name: brand_safety_manager.keyword_add
   parent: brand_safety_manager.settings_group
-  weight: 2
+  weight: 3
 
 # Menu item - Add Bulk Keywords
 brand_safety_manager.keyword_bulk_menu:
@@ -28,7 +36,7 @@ brand_safety_manager.keyword_bulk_menu:
   description: 'Add keywords using bulk textarea'
   route_name: brand_safety_manager.keyword_bulk
   parent: brand_safety_manager.settings_group
-  weight: 3
+  weight: 4
 
 # Menu item - Upload CSV
 brand_safety_manager.keyword_upload_menu:
@@ -36,4 +44,4 @@ brand_safety_manager.keyword_upload_menu:
   description: 'Upload keyword list from CSV file'
   route_name: brand_safety_manager.keyword_upload
   parent: brand_safety_manager.settings_group
-  weight: 4
+  weight: 5

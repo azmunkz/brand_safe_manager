@@ -53,3 +53,19 @@ brand_safety_manager.keyword_edit:
     _title: 'Edit Keyword'
   requirements:
     _permission: 'administer site configuration'
+
+brand_safety_manager.settings:
+  path: '/admin/config/brand-safety/settings'
+  defaults:
+    _form: '\Drupal\brand_safety_manager\Form\BrandSafetyManagerSettingsForm'
+    _title: 'Brand Safety Settings'
+  requirements:
+    _permission: 'administer brand safety settings'
+
+brand_safety_manager.content_scan:
+  path: '/brand-safety/scan'
+  defaults:
+    _controller: '\Drupal\brand_safety_manager\Controller\BrandSafetyScanController::scan'
+  requirements:
+    _permission: 'access content'
+  methods: [POST]
