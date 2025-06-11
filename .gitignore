@@ -1,0 +1,22 @@
+# Ignore Drupal generated files
+/vendor/
+/node_modules/
+/sites/
+/files/
+/.settings.php
+/.env
+/.idea/
+/*.sqlite
+
+# Composer stuff
+/composer.lock
+
+# Mac system files
+.DS_Store
+
+# Temp files
+*.log
+*.tmp
+
+# .bak file
+*.bak
